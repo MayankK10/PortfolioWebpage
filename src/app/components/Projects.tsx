@@ -87,7 +87,7 @@ built: [
     },
     {
       emoji: "📊",
-      title: "Big Data Pipeline",
+      title: "Big Data Engineering Pipeline for Large Scale E-Commerce Data",
       description:
         "Distributed analytics pipeline built using Spark, Hadoop for scalable ETL.",
       tags: ["Distributed ETL", "Spark", "Hadoop", "HDFS"],
