@@ -87,7 +87,7 @@ built: [
     },
     {
       emoji: "📊",
-      title: "Big Data Engineering Pipeline for Large Scale E-Commerce Data",
+      title: "Big Data Engineering Pipeline for E-Commerce Data",
       description:
         "Distributed analytics pipeline built using Spark, Hadoop for scalable ETL.",
       tags: ["Distributed ETL", "Spark", "Hadoop", "HDFS"],
@@ -156,7 +156,7 @@ built: [
     },
     {
       emoji: "🛸",
-      title: "Autonomous Drone Swarming with end to end vision pipeline.",
+      title: "Autonomous Drone Swarming with vision pipeline.",
       description:
         "Part of the project under Centre for Innovation IIT Madras",
       tags: ["Vision Language Models", "HuggingFace", "Diffusion Models","OpenCV","Multithreading"],
