@@ -76,7 +76,7 @@ built: [
 ],
 
   challenges: [
-  "Class Imbalance: defaults were the minority class, making accuracy alone insufficient — evaluated performance using F1 and ROC-AUC.",
+  "Class Imbalance: defaults were the minority class, making accuracy alone insufficient evaluated performance using F1 and ROC-AUC.",
   "Feature engineering: derived borrower features improved model accuracy by 10%, outperforming gains from model selection alone.",
 ],
 
@@ -249,7 +249,7 @@ export default function Projects() {
      >
 
     {/* Visual Area */}
-    <div className="relative flex h-52 items-center justify-center overflow-hidden bg-gray-100 dark:bg-[#1A2130]">
+    <div className="relative flex h-52 items-center justify-center overflow-hidden bg-gray-300 dark:bg-[#1A2130]">
 
       {/* Emoji */}
       <div className="text-7xl transition-all duration-500 group-hover:scale-110 group-hover:opacity-30">
@@ -284,7 +284,7 @@ export default function Projects() {
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700 dark:bg-[#1A2130] dark:text-gray-300"
+            className="rounded-full bg-gray-200 px-3 py-1 text-xs font-medium text-gray-700 dark:bg-[#1A2130] dark:text-gray-300"
           >
             {tag}
           </span>
