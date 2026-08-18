@@ -14,7 +14,7 @@ export default function Contact() {
 
         {/* Heading */}
         <div className="text-center">
-          <h2 className="text-6xl font-extrabold tracking-tight text-black dark:text-white">
+          <h2 className="text-5xl font-extrabold tracking-tight text-black dark:text-white">
             Let's Connect
           </h2>
 
