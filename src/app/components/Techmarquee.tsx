@@ -10,7 +10,7 @@ export default function TechMarquee() {
   ];
 
   return (
-    <div className="group w-full overflow-hidden border-y border-gray-300 bg-[#F1F4FA] py-5 dark:border-[#293142] dark:bg-[#0F1522]">
+    <div className="group mt-10 w-full overflow-hidden border-y border-gray-300 bg-[#F1F4FA] py-5 dark:border-[#293142] dark:bg-[#0F1522] md:mt-0">
       <div className="marquee-track">
 
         {/* Copy 1 */}
