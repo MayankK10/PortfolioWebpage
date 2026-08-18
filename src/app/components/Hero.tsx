@@ -6,11 +6,11 @@ export default function Hero() {
       
     <section
     id="hero"
-    className="relative flex min-h-screen items-center px-4 pt-24 md:pl-8 md:pr-100 md:pt-20">
+    className="relative flex min-h-screen flex-col items-center px-4 pt-24 text-center md:flex-row md:items-center md:pl-8 md:pr-100 md:pt-20 md:text-left">
 
       {/* Left Content */}
       {/*Availability Badge*/}
-      <div className="relative -top-4 w-full max-w-3xl text-center md:-top-10 md:text-left">
+      <div className="relative flex w-full max-w-3xl flex-col items-center text-center md:-top-10 md:items-start md:text-left">
       <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white/60 px-5 py-2.5 text-sm font-medium tracking-wide text-gray-600 shadow-[0_0_18px_rgba(34,197,94,0.15)] backdrop-blur-sm transition-all duration-300 hover:shadow-[0_0_24px_rgba(34,197,94,0.25)] dark:border-[#374151] dark:bg-[#151B28]/60 dark:text-gray-300 md:-ml-2">
         <span className="h-2.5 w-2.5 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.7)]" />
         <span>Open to AI/ Data roles</span>
@@ -101,7 +101,7 @@ export default function Hero() {
 
 </div>
   {/* Right Image */}
-<div className="relative mt-12 flex justify-center md:absolute md:-right-10 md:top-48/100 md:z-10 md:-translate-y-1/2">
+<div className="relative mt-12 flex w-full justify-center md:absolute md:-right-10 md:top-48/100 md:z-10 md:mt-0 md:w-auto md:-translate-y-1/2">
 {/* Animated Glow */}
   <div className="absolute -inset-12 -z-10 rounded-[4rem] bg-gradient-to-br from-blue-400/35 via-purple-400/25 to-cyan-300/30 blur-3xl animate-image-glow" />
   

@@ -62,7 +62,7 @@ export default function Stack() {
     <section id="stack" className="bg-transparent px-8 py-30">
       <div className="mx-auto max-w-7xl">
 
-        <h2 className="mt-4 text-6xl font-extrabold tracking-tight text-black dark:text-white">
+        <h2 className="mt-3 text-6xl font-extrabold tracking-tight text-black dark:text-white">
             Tools & Technologies
         </h2>
 
