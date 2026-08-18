@@ -25,7 +25,7 @@ export default function Navbar() {
         </a>
 
         {/* Navigation */}
-        <div className="flex items-center gap-10 text-[15px] font-medium text-gray-600 dark:text-gray-300">
+        <div className="hidden items-center gap-10 text-[15px] font-medium text-gray-600 dark:text-gray-300 md:flex">
 
           <a
           href="#about"
@@ -163,7 +163,7 @@ export default function Navbar() {
         }}
         className="w-full rounded-full bg-[#FACC15] px-6 py-3 font-medium text-black"
       >
-        Let's Connects
+        Let's Connect
       </button>
 
     </div>
