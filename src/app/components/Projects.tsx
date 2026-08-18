@@ -233,11 +233,11 @@ export default function Projects() {
       <div className="mx-auto max-w-7xl">
         
 
-        <h2 className="mt-3 text-6xl font-extrabold tracking-tight text-black dark:text-white">
+        <h2 className="mt-3 text-5xl text-center font-extrabold tracking-tight text-black dark:text-white md:text-6xl md:text-left">
             Selected Work
         </h2>
 
-        <p className="mt-5 max-w-2xl text-lg text-gray-900 dark:text-gray-200">
+        <p className="mt-5 max-w-2xl text-center text-lg text-gray-900 dark:text-gray-200 md:text-left">
             Each opens a full case study - Motivation, Architecture, Results, Challenges and Learnings.
         </p>
 
