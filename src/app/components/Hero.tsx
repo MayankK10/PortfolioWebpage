@@ -101,7 +101,7 @@ export default function Hero() {
 
 </div>
   {/* Right Image */}
-<div className="relative mt-12 flex w-full justify-center md:absolute md:-right-10 md:top-48/100 md:z-10 md:mt-0 md:w-auto md:-translate-y-1/2">
+<div className="relative mt-12 mb-12 flex w-full justify-center md:absolute md:-right-10 md:top-48/100 md:z-10 md:mt-0 md:w-auto md:-translate-y-1/2">
 {/* Animated Glow */}
   <div className="absolute -inset-12 -z-10 rounded-[4rem] bg-gradient-to-br from-blue-400/35 via-purple-400/25 to-cyan-300/30 blur-3xl animate-image-glow" />
   
