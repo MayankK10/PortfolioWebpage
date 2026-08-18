@@ -77,7 +77,7 @@ export default function Experience() {
             >
 
               {/* Left Timeline */}
-              <div className="text-center md:col-span-2 md:text-left">
+              <div className="text-left md:col-span-2 md:text-left">
                 <p className="text-sm text-gray-400">
                   {exp.period}
                 </p>
@@ -88,7 +88,7 @@ export default function Experience() {
               </div>
 
               {/* Right Content */}
-              <div className="min-w-0 text-center md:col-span-10 md:text-left">
+              <div className="min-w-0 text-left md:col-span-10 md:text-left">
                 <div>
                   <div>
                     <h3 className="text-3xl font-bold text-black dark:text-white">
