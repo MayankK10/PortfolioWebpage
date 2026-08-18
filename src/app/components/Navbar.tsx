@@ -85,7 +85,7 @@ export default function Navbar() {
 
     {/*Mobile features*/}
 
-  <div className="mr-10 flex items-center gap-2 md:hidden">
+  <div className="mr-14 flex items-center gap-2 md:hidden">
      <button
         onClick={() => {const newMode = !darkMode;
           setDarkMode(newMode);
