@@ -82,7 +82,6 @@ export default function Navbar() {
           </button>
     
         </div>
-      </div>
 
     {/*Mobile features*/}
 
@@ -117,6 +116,7 @@ export default function Navbar() {
     {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
   </button>
 
+</div>
 </div>
 {mobileMenuOpen && (
   <div className="absolute left-0 right-0 top-full border-t border-gray-200 bg-white/95 px-6 py-5 shadow-lg backdrop-blur-xl dark:border-gray-800 dark:bg-[#111827]/95 md:hidden">
