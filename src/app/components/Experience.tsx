@@ -65,7 +65,7 @@ export default function Experience() {
     >
       <div className="mx-auto max-w-7xl">
 
-        <h2 className="mt-3 text-4xl text-center font-extrabold tracking-tight text-black dark:text-white md:text-6xl md:text-left">
+        <h2 className="mt-3 text-5xl text-center font-extrabold tracking-tight text-black dark:text-white md:text-6xl md:text-left">
           Where I've Worked
         </h2>
 

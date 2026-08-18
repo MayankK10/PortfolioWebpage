@@ -66,7 +66,7 @@ export default function Footer() {
         <button
           onClick={scrollToTop}
           aria-label="Back to top"
-          className="absolute bottom-[30px] right-0 flex h-[46px] items-center gap-3 rounded-2xl border border-[#D9DDE5] dark:border-[#3B4556] bg-transparent px-5 text-sm text-[#9AA3B2] transition-all duration-300 hover:border-[#B8BFCE] hover:text-[#64748B] dark:text-gray-300"
+          className="absolute bottom-[15px] right-0 flex h-[46px] items-center gap-3 rounded-2xl border border-[#D9DDE5] dark:border-[#3B4556] bg-transparent px-5 text-sm text-[#9AA3B2] transition-all duration-300 hover:border-[#B8BFCE] hover:text-[#64748B] dark:text-gray-300 md:bottom-[30px]"
         >
           <FaChevronUp size={11} />
           <span>Top</span>

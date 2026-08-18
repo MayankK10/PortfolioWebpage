@@ -7,7 +7,7 @@ export default function About() {
       <div className="mx-auto max-w-7xl">
 
         {/* Heading */}
-        <h2 className="mb-10 text-center text-4xl font-extrabold tracking-tight md:mb-14 md:text-left md:text-6xl">
+        <h2 className="mb-10 text-center text-5xl font-extrabold tracking-tight md:mb-14 md:text-left md:text-6xl">
           A quick snapshot
         </h2>
 
