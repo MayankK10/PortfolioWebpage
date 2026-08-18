@@ -9,13 +9,18 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
   background: #fafbff;
   color: #111827;
   position: relative;
+  width: 100%;
+  min-width: 0;
   overflow-x: hidden;
+
   transition:
     background-color 0.7s ease,
     color 0.7s ease;
