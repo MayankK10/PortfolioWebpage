@@ -121,7 +121,7 @@ export default function Hero() {
     });
   }}
   aria-label="Scroll to About section"
-  className="absolute bottom-4 left-1/2 -translate-x-1/2 cursor-pointer md:bottom-8">
+  className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer md:bottom-8">
   <div className="flex h-12 w-7 items-start justify-center rounded-full border-2 border-gray-400/70 transition-all duration-300 hover:border-blue-500 dark:border-gray-500/70 dark:hover:border-blue-400">
     <span className="mt-2 h-2 w-1 rounded-full bg-blue-600 dark:bg-blue-400 animate-scroll-dot" />
   </div>
