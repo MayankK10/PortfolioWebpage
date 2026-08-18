@@ -13,7 +13,15 @@ export default function Navbar() {
   }
 }, []);
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 bg-transparent/80 shadow-[0_8px_30px_rgba(0,0,0,0.05)] backdrop-blur-xl">
+    <nav
+  className="fixed left-0 right-0 top-0 z-[9999] w-full bg-transparent/80 shadow-[0_8px_30px_rgba(0,0,0,0.05)] backdrop-blur-xl"
+  style={{
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+  }}
+>
       <div className="mx-auto flex max-w-9xl items-center justify-between px-4 py-3 md:px-8 md:py-5">
         
         {/* Logo */}
