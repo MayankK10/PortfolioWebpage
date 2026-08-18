@@ -118,7 +118,7 @@ export default function Experience() {
                   ))}
                 </ul>
 
-                <div className="mt-6 flex flex-wrap justify-center gap-2 md:justify-start">
+                <div className="mt-6 flex flex-wrap justify-start gap-2 md:justify-start">
                   {exp.tags.map((tag) => (
                     <span
                       key={tag}
