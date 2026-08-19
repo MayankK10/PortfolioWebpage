@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, type SubmitEvent } from "react";
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -8,6 +9,37 @@ import {
 } from "react-icons/fa";
 
 export default function Contact() {
+  const [status, setStatus] = useState("");
+  const [sending, setSending] = useState(false);
+
+const handleSubmit = async (e: SubmitEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    setSending(true);
+    setStatus("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        setStatus("Message sent successfully!");
+        form.reset();
+      } else {
+        setStatus("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setStatus("Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
+  };
+
   return (
     <section id="contact" className="bg-transparent px-8 py-30">
       <div className="mx-auto max-w-7xl">
@@ -20,14 +52,14 @@ export default function Contact() {
 
           <p className="mt-8 text-xl text-gray-700 dark:text-gray-400">
             Open to roles and collaborations in London around Data, Applied ML and AI.
-         </p>
+          </p>
         </div>
 
         {/* Contact Form */}
         <form
-        action="/api/contact"
-        method="POST"
-        className="mx-auto mt-16 w-full max-w-3xl space-y-8">
+          onSubmit={handleSubmit}
+          className="mx-auto mt-16 w-full max-w-3xl space-y-8"
+        >
 
           {/* Name */}
           <div>
@@ -36,7 +68,7 @@ export default function Contact() {
             </label>
 
             <input
-                 name="name"
+              name="name"
               type="text"
               placeholder="Your name"
               required
@@ -50,23 +82,23 @@ export default function Contact() {
               Contact
             </label>
 
-           <input
-               name="contact"
-           type="tel"
-           inputMode="numeric"
-           pattern="[0-9]{10}"
-           maxLength={10}
-           minLength={10}
-           placeholder="10-digit phone number"
-           required
-           onInput={(e) => {
-            e.currentTarget.value = e.currentTarget.value
-            .replace(/\D/g, "")
-            .slice(0, 10);
-        }}
-        className="w-full rounded-2xl border border-[#D2D6E0] bg-[#FAFBFD] px-5 py-4 text-lg text-black outline-none transition-all duration-300 placeholder:text-gray-400 focus:border-[#FACC15] focus:bg-white focus:ring-4 focus:ring-[#FACC15]/20 dark:border-[#30394A] dark:bg-[#1A2130] dark:text-white dark:placeholder:text-gray-500 dark:focus:bg-[#121824]"
-        />
-    </div>
+            <input
+              name="contact"
+              type="tel"
+              inputMode="numeric"
+              pattern="[0-9]{10}"
+              maxLength={10}
+              minLength={10}
+              placeholder="10-digit phone number"
+              required
+              onInput={(e) => {
+                e.currentTarget.value = e.currentTarget.value
+                  .replace(/\D/g, "")
+                  .slice(0, 10);
+              }}
+              className="w-full rounded-2xl border border-[#D2D6E0] bg-[#FAFBFD] px-5 py-4 text-lg text-black outline-none transition-all duration-300 placeholder:text-gray-400 focus:border-[#FACC15] focus:bg-white focus:ring-4 focus:ring-[#FACC15]/20 dark:border-[#30394A] dark:bg-[#1A2130] dark:text-white dark:placeholder:text-gray-500 dark:focus:bg-[#121824]"
+            />
+          </div>
 
           {/* Email */}
           <div>
@@ -75,7 +107,7 @@ export default function Contact() {
             </label>
 
             <input
-               name="email"
+              name="email"
               type="email"
               placeholder="you@example.com"
               required
@@ -90,7 +122,7 @@ export default function Contact() {
             </label>
 
             <textarea
-                name="message"
+              name="message"
               rows={4}
               placeholder="How can I help?"
               required
@@ -99,14 +131,27 @@ export default function Contact() {
           </div>
 
           {/* Send Button */}
-                <button
+          <button
             type="submit"
-            className="flex w-full items-center justify-center gap-3 rounded-2xl bg-[#FACC15] px-6 py-4 text-lg font-semibold text-black transition-all duration-300 hover:-translate-y-1 hover:bg-[#EAB308] hover:shadow-lg active:scale-[0.98]"
+            disabled={sending}
+            className="flex w-full items-center justify-center gap-3 rounded-2xl bg-[#FACC15] px-6 py-4 text-lg font-semibold text-black transition-all duration-300 hover:-translate-y-1 hover:bg-[#EAB308] hover:shadow-lg active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
           >
-            Send Message
-            <span className="text-xl">→</span>
+            {sending ? "Sending..." : "Send Message"}
+            {!sending && <span className="text-xl">→</span>}
           </button>
 
+          {/* Status Message */}
+          {status && (
+            <p
+              className={`text-center text-lg font-medium ${
+                status.includes("successfully")
+                  ? "text-green-600 dark:text-green-400"
+                  : "text-red-600 dark:text-red-400"
+              }`}
+            >
+              {status}
+            </p>
+          )}
         </form>
 
         {/* Contact Items */}
@@ -115,10 +160,10 @@ export default function Contact() {
           {/* Location */}
           <div className="text-center">
             <div className="group mx-auto flex h-22 w-22 items-center justify-center rounded-full border border-gray-200 bg-gray-50 transition-all duration-300 hover:scale-105 hover:border-[#FACC15] hover:bg-[#FEF9C3] dark:border-[#30394A] dark:bg-[#1A2130]">
-                <FaMapMarkerAlt
+              <FaMapMarkerAlt
                 size={20}
                 className="text-[#FACC15] transition-all duration-300 group-hover:scale-110"
-                />
+              />
             </div>
 
             <h3 className="mt-8 text-lg font-bold text-black dark:text-white">
@@ -133,10 +178,10 @@ export default function Contact() {
           {/* Phone */}
           <div className="text-center">
             <div className="group mx-auto flex h-22 w-22 items-center justify-center rounded-full border border-gray-200 bg-gray-50 transition-all duration-300 hover:scale-105 hover:border-[#FACC15] hover:bg-[#FEF9C3] dark:border-[#30394A] dark:bg-[#1A2130]">
-                <FaPhoneAlt
+              <FaPhoneAlt
                 size={20}
                 className="text-[#22C55E] transition-all duration-300 group-hover:scale-110"
-                />
+              />
             </div>
 
             <h3 className="mt-8 text-lg font-bold text-black dark:text-white">
@@ -149,49 +194,56 @@ export default function Contact() {
           </div>
 
           {/* Email */}
-          <div className="text-center">
-            <div className="group mx-auto flex h-22 w-22 items-center justify-center rounded-full border border-gray-200 bg-gray-50 transition-all duration-300 hover:scale-105 hover:border-[#FACC15] hover:bg-[#FEF9C3] dark:border-[#30394A] dark:bg-[#1A2130]">
-                <FaEnvelope
-                size={20}
-                className="text-[#EA4335] transition-all duration-300 group-hover:scale-110"
-                />
-            </div>
+<div className="text-center">
+  <a
+    href="mailto:mayankkulkarni65@gmail.com"
+    className="group mx-auto flex h-22 w-22 items-center justify-center rounded-full border border-gray-200 bg-gray-50 transition-all duration-300 hover:scale-105 hover:border-[#FACC15] hover:bg-[#FEF9C3] dark:border-[#30394A] dark:bg-[#1A2130]"
+  >
+    <FaEnvelope
+      size={20}
+      className="text-[#EA4335] transition-all duration-300 group-hover:scale-110"
+    />
+  </a>
 
-            <h3 className="mt-8 text-lg font-bold text-black dark:text-white">
-              EMAIL
-            </h3>
+  <h3 className="mt-8 text-lg font-bold text-black dark:text-white">
+    EMAIL
+  </h3>
 
-            <a
-              href="mailto:mayankkulkarni65@gmail.com"
-              className="mt-5 block text-lg text-gray-500 dark:text-gray-400"
-            >
-              mayankkulkarni65@gmail.com
-            </a>
-          </div>
+  <a
+    href="mailto:mayankkulkarni65@gmail.com"
+    className="mt-5 block text-lg text-gray-500 dark:text-gray-400"
+  >
+    mayankkulkarni65@gmail.com
+  </a>
+</div>
 
-          {/* GitHub */}
-          <div className="text-center">
-            <div className="group mx-auto flex h-22 w-22 items-center justify-center rounded-full border border-gray-200 bg-gray-50 transition-all duration-300 hover:scale-105 hover:border-[#FACC15] hover:bg-[#FEF9C3] dark:border-[#30394A] dark:bg-[#1A2130]">
-                <FaGithub
-                size={20}
-                className="text-[#6E40C9] transition-all duration-300 group-hover:scale-110"
-                />
-                </div>
+{/* GitHub */}
+<div className="text-center">
+  <a
+    href="https://github.com/MayankK10"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group mx-auto flex h-22 w-22 items-center justify-center rounded-full border border-gray-200 bg-gray-50 transition-all duration-300 hover:scale-105 hover:border-[#FACC15] hover:bg-[#FEF9C3] dark:border-[#30394A] dark:bg-[#1A2130]"
+  >
+    <FaGithub
+      size={20}
+      className="text-[#6E40C9] transition-all duration-300 group-hover:scale-110"
+    />
+  </a>
 
-            <h3 className="mt-8 text-lg font-bold text-black dark:text-white">
-              GITHUB
-            </h3>
+  <h3 className="mt-8 text-lg font-bold text-black dark:text-white">
+    GITHUB
+  </h3>
 
-            <a
-              href="https://github.com/MayankK10"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 block text-lg text-gray-500 dark:text-gray-400"
-            >
-              View GitHub
-            </a>
-          </div>
-
+  <a
+    href="https://github.com/MayankK10"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mt-5 block text-lg text-gray-500 dark:text-gray-400"
+  >
+    View GitHub
+  </a>
+</div>
         </div>
       </div>
     </section>
