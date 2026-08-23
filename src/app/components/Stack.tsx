@@ -30,7 +30,7 @@ export default function Stack() {
         "Spark",
         "Hadoop",
         "Airflow",
-        "Pandas",
+        "AWS",
         "NumPy",
         "ETL",
       ],
