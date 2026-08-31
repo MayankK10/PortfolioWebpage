@@ -87,25 +87,23 @@ built: [
     },
     {
       emoji: "📊",
-      title: "Big Data Engineering Pipeline for E-Commerce Data",
+      title: "Big Data Engineering Pipeline for NFL Weather Analysis",
       description:
-        "Distributed analytics pipeline built using Spark, Hadoop for scalable ETL.",
-      tags: ["Distributed ETL", "Spark", "Hadoop", "HDFS"],
+        "Distributed analytics pipeline built using Spark, Airflow for scalable ETL.",
+      tags: ["Distributed ETL", "Spark","Snowflake", "Airflow"],
       motivation: [
-        "Process and analyze large-scale e-commerce transaction data beyond the limits of traditional single-machine workflows.",
-        "Extract actionable insights into customer behavior, product performance, revenue trends, and retention.",
+        "Process and analyze large-scale NFL Teams Fourth Down Data under varied weather conditions beyond the limits of traditional single-machine workflows.",
+        "Extract actionable insights into trends, behaviour and game plan.",
         "Build a scalable distributed analytics pipeline from raw transactions to analytical insights."],
         architecture:
-        "E-commerce Data → HDFS → PySpark ETL → Spark SQL → Analytics & Insights",
+        "NFL Data+ Weather Data →Airflow ETL → Spark SQL Joins → Snowflake Data Loading → Analytics & Insights",
     built: [
-            "Built distributed ETL workflows using PySpark for data cleaning, transformation, feature engineering, and multi-table joins.",
-            "Designed Hive tables and Spark SQL workflows for large-scale analytical querying.",
-            "Generated analytics on customer behavior, product performance, revenue trends, and customer retention.",
+            "Built distributed ETL workflows using Airflow for data cleaning, transformation, following feature engineering, and multi-table joins using Spark Joins.",
+            "Designed Spark SQL workflows for large-scale analytical querying.",
             "Optimized Spark workloads using partitioning, caching, and broadcast joins." ],
     results: [
-        "Processed 1M+ e-commerce transactions using a distributed Hadoop and PySpark pipeline.",
         "Reduced Spark processing time by ~30% through partitioning, caching, and broadcast join optimization.",
-        "Generated analytics across customer behavior, product performance, revenue trends, and retention.",
+        "Generated analytics across trends, and game plan.",
         "Benchmarked Spark workloads across multiple configurations to identify optimal processing strategies." ],
     
     challenges: [
@@ -234,7 +232,7 @@ export default function Projects() {
         
 
         <h2 className="mt-3 text-5xl text-center font-extrabold tracking-tight text-black dark:text-white md:text-6xl md:text-left">
-            Selected Work
+            Selected Work 
         </h2>
 
         <p className="mt-5 max-w-2xl text-center text-lg text-gray-900 dark:text-gray-200 md:text-left">
